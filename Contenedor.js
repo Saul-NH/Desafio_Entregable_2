@@ -47,13 +47,13 @@ class Contenedor {
         await fs.promises.writeFile(this.filename, JSON.stringify(content));
     }
 
-    buildId(contenido) {
+    buildId(content) {
         try {
-            if (contenido.length === 0) {
+            if (content.length === 0) {
                 return 1;
             } else {
-                contenido.sort((a, b) => (a.id > b.id ? 1 : -1));
-                return contenido[contenido.length - 1].id + 1;
+                content.sort((a, b) => (a.id > b.id ? 1 : -1));
+                return content[content.length - 1].id + 1;
             }
         } catch (error) {
             console.error(error);
